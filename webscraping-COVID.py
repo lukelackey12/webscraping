@@ -45,15 +45,28 @@ for row in table_rows[2:53]:
     death_ratio = total_deaths/total_cases
     test_ratio = total_tested/population
 
-print("State with the highest death ratio is:", state_death_ratio)
+    if death_ratio > highest_death_ratio:
+        highest_death_ratio = death_ratio
+        state_death_ratio = state
+
+    if test_ratio > best_test_ratio:
+        best_test_ratio = test_ratio
+        state_best_testing = state
+
+    if test_ratio < worst_test_ratio:
+        worst_test_ratio = test_ratio
+        state_worst_testing = state
+
+print()
+print("State with the highest death ratio is:", state_death_ratio.lstrip('\n'))
 print(f"Death ratio: {highest_death_ratio:.2%}")
 print()
 print()
-print("State with the best testing ratio is:", state_best_testing)
+print("State with the best testing ratio is:", state_best_testing.lstrip('\n'))
 print(f"Test Ratio: {best_test_ratio:.2%}")
 print()
 print()
-print("State with the worst testing ratio is:", state_worst_testing)
+print("State with the worst testing ratio is:", state_worst_testing.lstrip('\n'))
 print(f"Test Ratio: {worst_test_ratio:.2%}")
 print()
 print()
