@@ -116,8 +116,8 @@ top_10_tag_names = [tag[0] for tag in top_10_tags]
 top_10_tag_counts = [tag[1] for tag in top_10_tags]
 
 # Plot top 10 tags based on popularity
-fig2 = go.Figure(data=[go.Pie(labels=top_10_tag_names, values=top_10_tag_counts, textinfo='value')])
-fig2.update_layout(title='Top 10 Tags by Popularity')
+fig2 = go.Figure([go.Bar(x=top_10_tag_names, y=top_10_tag_counts)])
+fig2.update_layout(title='Top 10 Tags by Popularity', xaxis_title='Tags', yaxis_title='Tag Count')
 
 # Show plots
 fig1.show()
